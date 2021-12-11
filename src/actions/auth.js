@@ -63,6 +63,7 @@ export const login =
         type: 'LOGIN_SUCCESS',
         payload: res.data,
       });
+      getCurrentProfile()
     } catch (err) {
       dispatch(setAlert("Login qilishda xatolik qayta urinib ko'ring", 'danger'));
 

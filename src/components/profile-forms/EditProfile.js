@@ -82,7 +82,7 @@ const EditProfile = ({
           linkedin:loading|| !profile.social?'':profile.social.linkedin,
       }) */
     setSocials(loading, profile);
-  }, []);
+  }, [getCurrentProfile, loading, profile]);
 
   return (
     <div className='register'>
