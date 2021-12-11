@@ -1,0 +1,38 @@
+.Landing{
+    height: 600px;
+    background: url('../301.jpg') no-repeat  center center/cover;
+    padding: 200px 0px;
+}
+.Landing h1{
+    color: white;
+}
+.Landing p{
+    color: white;
+}
+.Landing .btn{
+    margin: 0px 10px;
+}
+.alert_success{
+    width: 80%;
+    height: 30px;
+    background: green;
+    color: white;
+    margin: auto;
+    z-index: 1; 
+    top: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.alert_danger {
+    width: 80%;
+    height: 30px;
+    background: red;
+    color: white;
+    margin: auto;
+    z-index: 1; 
+    top: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
