@@ -12,7 +12,6 @@ import ProfileGithub from './ProfileGithub'
 import './Profile.css'
 
 const Profile = ({
-  getProfileById,
   getCurrentProfile,
   getProfiles,
   profile: { profile,profiles, loading },

@@ -8,6 +8,7 @@ export const getPosts = () => async (dispatch) => {
       type: 'GET_POSTS',
       payload: res.data,
     });
+    console.log("getPosts");
   } catch (err) {
     dispatch({
       type: 'POST_ERROR',
@@ -27,6 +28,8 @@ export const addLike = (id) => async (dispatch) => {
       type: 'UPDATE_LIKES',
       payload: {id, likes:res.data},
     });
+    console.log("addLike");
+    console.log(res.data)
   } catch (err) {
     dispatch({
       type: 'POST_ERROR',
@@ -44,6 +47,7 @@ export const removeLike = (id) => async (dispatch) => {
       type: 'UPDATE_LIKES',
       payload: {id, likes:res.data},
     });
+    console.log("removeLike");
   } catch (err) {
     dispatch({
       type: 'POST_ERROR',
@@ -65,6 +69,7 @@ export const deletePost = (id)=> async (dispatch)=>{
       type:'DELETE_POST',
       payload:id
     })
+    console.log("deletePost");
 
     dispatch(setAlert('Post removed', 'success'))
 
@@ -87,7 +92,7 @@ export const addPost = (formData)=> async (dispatch)=>{
   }
   try{
 
-    
+    console.log("addPost")
 
     const res = await axios.post(`https://urolov-dev-connector.herokuapp.com/api/posts`,formData, config )
 
@@ -118,6 +123,7 @@ export const getPost = (id) => async (dispatch) => {
       type: 'GET_POST',
       payload: res.data,
     });
+    console.log("getPost")
   } catch (err) {
     dispatch({
       type: 'POST_ERROR',
@@ -147,6 +153,7 @@ export const addComment = (postId, formData)=> async (dispatch)=>{
       type:'ADD_COMMENT',
       payload:res.data
     })
+    console.log("addComment")
 
     dispatch(setAlert('Comment Added', 'success'))
 
@@ -178,7 +185,8 @@ export const deleteComment = (postId, commentId)=> async (dispatch)=>{
       payload:commentId
     })
 
-    dispatch(setAlert('Comment Deleted', 'success'))
+    dispatch(setAlert('Comment Deleted', 'success'));
+    console.log("deleteComment")
 
   }
   catch(err){

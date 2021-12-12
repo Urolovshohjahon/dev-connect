@@ -15,7 +15,6 @@ const PostItem = ({
   addLike,
   removeLike,
 }) => {
-  console.log(date)
   return (
     <div className='post d-flex justify-content-start'>
       <div>

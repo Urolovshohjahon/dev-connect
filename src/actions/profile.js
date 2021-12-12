@@ -8,7 +8,7 @@ export const getCurrentProfile = () => async (dispatch) => {
       type: 'GET_PROFILE',
       payload: res.data,
     });
-    getCurrentProfile()
+    console.log("getCurrentProfile")
   } catch (err) {
     dispatch({
       type: 'PROFILE_ERROR',
@@ -161,6 +161,7 @@ export const getProfiles = () => async (dispatch) => {
       type: 'GET_PROFILES',
       payload: res.data,
     });
+    console.log("getProfiles")
   } catch (err) {
     dispatch({
       type: 'PROFILE_ERROR',

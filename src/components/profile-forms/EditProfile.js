@@ -65,8 +65,10 @@ const EditProfile = ({
     console.log("Salomlar hammaga hammaga hammaga hammaga");
   };
 
+  
+  getCurrentProfile();
+
   useEffect(() => {
-    getCurrentProfile();
     /* setPROFILE({
           company: loading|| !profile.company?'' :profile.company,
           website:loading|| !profile.website?'':profile.website,
@@ -82,7 +84,7 @@ const EditProfile = ({
           linkedin:loading|| !profile.social?'':profile.social.linkedin,
       }) */
     setSocials(loading, profile);
-  }, [getCurrentProfile, loading, profile]);
+  });
 
   return (
     <div className='register'>
