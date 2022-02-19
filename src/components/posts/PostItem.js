@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import Moment from 'react-moment';
 import { addLike, removeLike, deletePost } from '../../actions/post';
-import {BiLike, BiDislike} from 'react-icons/bi';
+import { BiLike, BiDislike } from 'react-icons/bi';
 import './Post.css'
 
 const PostItem = ({
@@ -26,16 +26,16 @@ const PostItem = ({
       <div className='post_item_body d-flex flex-column justify-content-between ' >
         <p>{text}</p>
         <p >
-         <strong> Posted on <Moment format='YYYY/MM/DD'>{date}</Moment> </strong>
+          <strong> Posted on <Moment format='YYYY/MM/DD'>{date}</Moment> </strong>
         </p>
         {showActions && (
           <div className="d-flex justify-content-between" >
             <button className='btn btn-light' onClick={() => addLike(_id)}>
-              <BiLike/>  {likes.length} 
+              <BiLike />  {likes.length}
             </button>
             <button className='btn btn-light' onClick={() => removeLike(_id)}>
-              <BiDislike/>
-              
+              <BiDislike />
+
             </button>
             <Link to={`/posts/${_id}`} className='btn btn-primary'>
               Discussion {comments.length > 0 && comments.length}
@@ -58,7 +58,7 @@ const PostItem = ({
 
 
 PostItem.defaultProps = {
-    showActions:true
+  showActions: true
 }
 
 PostItem.propTypes = {

@@ -1,6 +1,6 @@
 import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
-import {MdDoneOutline} from 'react-icons/md'
+import { MdDoneOutline } from 'react-icons/md'
 
 const ProfileAbout = ({
   profile: {
@@ -23,7 +23,7 @@ const ProfileAbout = ({
       <div className='skills'>
         {skills.map((skill, index) => (
           <div className='skill' key={index}>
-          <MdDoneOutline color="green" />  {skill}
+            <MdDoneOutline color="green" />  {skill}
           </div>
         ))}
       </div>

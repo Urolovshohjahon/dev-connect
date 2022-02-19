@@ -37,9 +37,9 @@ export const createProfile =
         history.push('/dashboard');
       }
     } catch (err) {
-      const errors = err.response.data.errors;
+      /* const errors = err.response.data.errors; */
 
-      errors.forEach((error) => dispatch(setAlert(error.msg, 'danger')));
+      dispatch(setAlert('Create profileda xatolik', 'danger'));
       dispatch({
         type: 'PROFILE_ERROR',
         payload: {

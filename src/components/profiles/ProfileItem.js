@@ -21,7 +21,7 @@ const ProfileItem = ({
           </div>
           <div className='col-md-4 d-flex align-items-center justify-content-between flex-column'>
             <h2>{name}</h2>
-            <p>
+            <p> 
               {status} {company && <span>at {company}</span>}
             </p>
             <p className='my-1'>{location && <span>{location}</span>}</p>

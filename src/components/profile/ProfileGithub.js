@@ -23,7 +23,7 @@ const ProfileGithub = ({ username, getGithubRepos, repos }) => {
                   {repo.name}
                 </a>
               </h4>
-              <p>{'repo.description'}</p>
+              <p>{repo.description}</p>
             </div>
             <div>
               <ul>

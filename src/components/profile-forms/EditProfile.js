@@ -13,6 +13,7 @@ const EditProfile = ({
   profile: { profile, loading },
   history,
 }) => {
+  
   const [status, setStatus] = useState('');
   const [website, setWebsite] = useState('');
   const [location, setLocation] = useState('');
@@ -66,7 +67,6 @@ const EditProfile = ({
   };
 
   
-  getCurrentProfile();
 
   useEffect(() => {
     /* setPROFILE({
@@ -95,15 +95,7 @@ const EditProfile = ({
               <h1>Update Your Profile</h1>
               <p>Let's get some information to make your profile stand out</p>
               <Form.Group className='mb-3' controlId='formBasicEmail'>
-                {/* <Form.Select
-                  {...register('status')}
-                  aria-label='Default select example'
-                >
-                  <option>*Open this select menu</option>
-                  <option value='1'>One</option>
-                  <option value='2'>Two</option>
-                  <option value='3'>Three</option>
-                </Form.Select> */}
+                
                 <select
                   className='form-select'
                   {...register('status')}
@@ -126,8 +118,8 @@ const EditProfile = ({
                   type='text'
                   {...register('company')}
                   placeholder='Company'
-                  value={company}
-                  onChange={(e) => setCompany(e.target.value)}
+                  value={123412451}
+                  /* onChange={(e) => setCompany(e.target.value)} */
                 />
                 <Form.Text className='text-muted'>
                   Could be your own company or one you work for

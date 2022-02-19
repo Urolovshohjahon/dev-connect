@@ -5,10 +5,10 @@ import { connect } from 'react-redux';
 import { Form, Button } from 'react-bootstrap';
 import { Link, withRouter } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import {createProfile} from '../../actions/profile';
+import { createProfile } from '../../actions/profile';
 
-const CreateProfile = ({createProfile, history}) => {
-  
+const CreateProfile = ({ createProfile, history }) => {
+
   const { register, handleSubmit } = useForm();
 
   const Submit = (data) => {
@@ -28,7 +28,7 @@ const CreateProfile = ({createProfile, history}) => {
         instagram:data.instagram
       }
     } */
-    createProfile(data,history)
+    createProfile(data, history)
   };
 
   return (
@@ -174,4 +174,4 @@ CreateProfile.propTypes = {
   createProfile: PropTypes.func.isRequired,
 };
 
-export default connect(null, {createProfile})(withRouter(CreateProfile));
+export default connect(null, { createProfile })(withRouter(CreateProfile));

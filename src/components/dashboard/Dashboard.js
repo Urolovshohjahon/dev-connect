@@ -7,7 +7,7 @@ import { Link } from 'react-router-dom';
 import DashboardAction from './DashboardAction';
 import Experience from './Experience';
 import Education from './Education';
-import {deleteAccount} from '../../actions/profile'
+import { deleteAccount } from '../../actions/profile'
 
 const Dashboard = ({
   getCurrentProfile,
@@ -29,7 +29,7 @@ const Dashboard = ({
           <DashboardAction />
           <Experience experience={profile.experience} />
           <Education education={profile.education} />
-          <button onClick={()=>deleteAccount()}  className="tbn btn-danger" >Delete my account</button>
+          <button onClick={() => deleteAccount()} className="btn btn-danger" >Delete my account</button>
         </Fragment>
       ) : (
         <>

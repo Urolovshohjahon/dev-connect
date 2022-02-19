@@ -2,7 +2,7 @@ import React, { useEffect, useState, Fragment } from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
-import { getProfileById, getCurrentProfile, getProfiles } from '../../actions/profile';
+import { } from '../../actions/profile';
 import Spinner from '../layout/Spinner';
 import ProfileTop from './ProfileTop'
 import ProfileAbout from './ProfileAbout'
@@ -12,16 +12,13 @@ import ProfileGithub from './ProfileGithub'
 import './Profile.css'
 
 const Profile = ({
-  getCurrentProfile,
-  getProfiles,
   profile: { profile,profiles, loading },
   auth,
   match,
 }) => {
     const [selectedProfile, setSelectedProfile] = useState(null)
   useEffect(() => {
-    getProfiles()
-    getCurrentProfile()
+    
     
     /* getProfileById(match.params.id); */
 
@@ -32,7 +29,7 @@ const Profile = ({
     // console.log("Bu selected bo'lib Lutfullo brat zo'r",profiles)
 
 
-  }, [getCurrentProfile, getProfiles,profiles, match.params.id, selectedProfile]);
+  }, [profiles, match.params.id, selectedProfile]);
 
   return (
     <Fragment>
@@ -101,9 +98,6 @@ const Profile = ({
 };
 
 Profile.propTypes = {
-  getProfileById: PropTypes.func.isRequired,
-  getCurrentProfile: PropTypes.func.isRequired,
-  getProfiles: PropTypes.func.isRequired,
   profile: PropTypes.object.isRequired,
   auth: PropTypes.object.isRequired,
 };
@@ -113,4 +107,4 @@ const mapStateToProps = (state) => ({
   auth: state.auth,
 });
 
-export default connect(mapStateToProps, { getCurrentProfile,getProfileById, getProfiles })(Profile);
+export default connect(mapStateToProps, { })(Profile);
