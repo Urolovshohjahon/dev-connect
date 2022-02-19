@@ -1,5 +1,5 @@
 {
-  "proxy": "https://urolov-dev-connector.herokuapp.com",
+  "proxy": "https://urolov-dev-connector-two.herokuapp.com",
   "name": "frontend",
   "version": "0.1.0",
   "private": true,

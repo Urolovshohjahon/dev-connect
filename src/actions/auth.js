@@ -9,7 +9,7 @@ export const loadUser = () => async (dispatch) => {
   }
 
   try {
-    const res = await axios.get('https://urolov-dev-connector.herokuapp.com/api/auth');
+    const res = await axios.get('https://urolov-dev-connector-two.herokuapp.com/api/auth');
     dispatch({
       type: 'USER_LOADED',
       payload: res.data,
@@ -32,7 +32,7 @@ export const registered =
     const body = JSON.stringify({ name, email, password });
 
     try {
-      const res = await axios.post('https://urolov-dev-connector.herokuapp.com/api/users', body, config);
+      const res = await axios.post('https://urolov-dev-connector-two.herokuapp.com/api/users', body, config);
       dispatch({
         type: 'REGISTER_SUCCESS',
         payload: res.data,
@@ -58,7 +58,7 @@ export const login =
     const body = JSON.stringify({ email, password });
 
     try {
-      const res = await axios.post('https://urolov-dev-connector.herokuapp.com/api/auth', body, config);
+      const res = await axios.post('https://urolov-dev-connector-two.herokuapp.com/api/auth', body, config);
       dispatch({
         type: 'LOGIN_SUCCESS',
         payload: res.data,

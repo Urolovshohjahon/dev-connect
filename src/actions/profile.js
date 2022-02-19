@@ -3,7 +3,7 @@ import { setAlert } from './alert';
 
 export const getCurrentProfile = () => async (dispatch) => {
   try {
-    const res = await axios.get('https://urolov-dev-connector.herokuapp.com/api/profile/me');
+    const res = await axios.get('https://urolov-dev-connector-two.herokuapp.com/api/profile/me');
     dispatch({
       type: 'GET_PROFILE',
       payload: res.data,
@@ -26,7 +26,7 @@ export const createProfile =
           'Content-Type': 'application/json',
         },
       };
-      const res = await axios.post('https://urolov-dev-connector.herokuapp.com/api/profile', formData, config);
+      const res = await axios.post('https://urolov-dev-connector-two.herokuapp.com/api/profile', formData, config);
 
       dispatch({
         type: 'GET_PROFILE',
@@ -57,7 +57,7 @@ export const addExperience =
           'Content-Type': 'application/json',
         },
       };
-      const res = await axios.put('https://urolov-dev-connector.herokuapp.com/api/profile/experience', formData, config);
+      const res = await axios.put('https://urolov-dev-connector-two.herokuapp.com/api/profile/experience', formData, config);
 
       dispatch({
         type: 'UPDATE_PROFILE',
@@ -86,7 +86,7 @@ export const addEducation =
           'Content-Type': 'application/json',
         },
       };
-      const res = await axios.put('https://urolov-dev-connector.herokuapp.com/api/profile/education', formData, config);
+      const res = await axios.put('https://urolov-dev-connector-two.herokuapp.com/api/profile/education', formData, config);
 
       dispatch({
         type: 'UPDATE_PROFILE',
@@ -107,7 +107,7 @@ export const addEducation =
 
 export const deleteExperience = (id) => async (dispatch) => {
   try {
-    const res = await axios.delete(`https://urolov-dev-connector.herokuapp.com/api/profile/experience/${id}`);
+    const res = await axios.delete(`https://urolov-dev-connector-two.herokuapp.com/api/profile/experience/${id}`);
     dispatch({
       type: 'UPDATE_PROFILE',
       payload: res.data,
@@ -123,7 +123,7 @@ export const deleteExperience = (id) => async (dispatch) => {
 };
 export const deleteEducation = (id) => async (dispatch) => {
   try {
-    const res = await axios.delete(`https://urolov-dev-connector.herokuapp.com/api/profile/education/${id}`);
+    const res = await axios.delete(`https://urolov-dev-connector-two.herokuapp.com/api/profile/education/${id}`);
     dispatch({
       type: 'UPDATE_PROFILE',
       payload: res.data,
@@ -139,7 +139,7 @@ export const deleteEducation = (id) => async (dispatch) => {
 export const deleteAccount = () => async (dispatch) => {
   if (window.confirm('Are you sure? This can NOT be undone!!!')) {
     try {
-      await axios.delete(`https://urolov-dev-connector.herokuapp.com/api/profile`);
+      await axios.delete(`https://urolov-dev-connector-two.herokuapp.com/api/profile`);
       dispatch({ type: 'CLEAR_PROFILE' });
       dispatch({ type: 'ACCOUNT_DELETED' });
       dispatch(setAlert('Your account is permanently deleted!'));
@@ -155,7 +155,7 @@ export const deleteAccount = () => async (dispatch) => {
 export const getProfiles = () => async (dispatch) => {
   try {
     /* dispatch({type:'CLEAR_PROFILE'}) */
-    const res = await axios.get('https://urolov-dev-connector.herokuapp.com/api/profile');
+    const res = await axios.get('https://urolov-dev-connector-two.herokuapp.com/api/profile');
     console.log(res.data);
     dispatch({
       type: 'GET_PROFILES',
@@ -171,7 +171,7 @@ export const getProfiles = () => async (dispatch) => {
 };
 export const getProfileById = (userID) => async (dispatch) => {
   try {
-    const res = await axios.get(`https://urolov-dev-connector.herokuapp.com/api/profile/user/${userID}`);
+    const res = await axios.get(`https://urolov-dev-connector-two.herokuapp.com/api/profile/user/${userID}`);
     dispatch({
       type: 'GET_PROFILES',
       payload: res.data,
@@ -185,7 +185,7 @@ export const getProfileById = (userID) => async (dispatch) => {
 };
 export const getGithubRepos = (username) => async (dispatch) => {
   try {
-    const res = await axios.get(`https://urolov-dev-connector.herokuapp.com/api/profile/github/${username}`);
+    const res = await axios.get(`https://urolov-dev-connector-two.herokuapp.com/api/profile/github/${username}`);
     dispatch({
       type: 'GET_REPOS',
       payload: res.data,

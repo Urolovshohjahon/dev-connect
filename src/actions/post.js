@@ -3,7 +3,7 @@ import { setAlert } from './alert';
 
 export const getPosts = () => async (dispatch) => {
   try {
-    const res = await axios.get('https://urolov-dev-connector.herokuapp.com/api/posts');
+    const res = await axios.get('https://urolov-dev-connector-two.herokuapp.com/api/posts');
     dispatch({
       type: 'GET_POSTS',
       payload: res.data,
@@ -23,7 +23,7 @@ export const getPosts = () => async (dispatch) => {
 
 export const addLike = (id) => async (dispatch) => {
   try {
-    const res = await axios.put(`https://urolov-dev-connector.herokuapp.com/api/posts/like/${id}`);
+    const res = await axios.put(`https://urolov-dev-connector-two.herokuapp.com/api/posts/like/${id}`);
     dispatch({
       type: 'UPDATE_LIKES',
       payload: {id, likes:res.data},
@@ -42,7 +42,7 @@ export const addLike = (id) => async (dispatch) => {
 };
 export const removeLike = (id) => async (dispatch) => {
   try {
-    const res = await axios.put(`https://urolov-dev-connector.herokuapp.com/api/posts/unlike/${id}`);
+    const res = await axios.put(`https://urolov-dev-connector-two.herokuapp.com/api/posts/unlike/${id}`);
     dispatch({
       type: 'UPDATE_LIKES',
       payload: {id, likes:res.data},
@@ -63,7 +63,7 @@ export const removeLike = (id) => async (dispatch) => {
 export const deletePost = (id)=> async (dispatch)=>{
   try{
 
-    await axios.delete(`https://urolov-dev-connector.herokuapp.com/api/posts/${id}`)
+    await axios.delete(`https://urolov-dev-connector-two.herokuapp.com/api/posts/${id}`)
 
     dispatch({
       type:'DELETE_POST',
@@ -94,7 +94,7 @@ export const addPost = (formData)=> async (dispatch)=>{
 
     console.log("addPost")
 
-    const res = await axios.post(`https://urolov-dev-connector.herokuapp.com/api/posts`,formData, config )
+    const res = await axios.post(`https://urolov-dev-connector-two.herokuapp.com/api/posts`,formData, config )
 
     dispatch({
       type:'ADD_POST',
@@ -118,7 +118,7 @@ export const addPost = (formData)=> async (dispatch)=>{
 
 export const getPost = (id) => async (dispatch) => {
   try {
-    const res = await axios.get(`https://urolov-dev-connector.herokuapp.com/api/posts/${id}`);
+    const res = await axios.get(`https://urolov-dev-connector-two.herokuapp.com/api/posts/${id}`);
     dispatch({
       type: 'GET_POST',
       payload: res.data,
@@ -147,7 +147,7 @@ export const addComment = (postId, formData)=> async (dispatch)=>{
 
     
 
-    const res = await axios.post(`https://urolov-dev-connector.herokuapp.com/api/posts/comment/${postId}`,formData, config )
+    const res = await axios.post(`https://urolov-dev-connector-two.herokuapp.com/api/posts/comment/${postId}`,formData, config )
 
     dispatch({
       type:'ADD_COMMENT',
@@ -178,7 +178,7 @@ export const deleteComment = (postId, commentId)=> async (dispatch)=>{
 
     
 
-    await axios.delete(`https://urolov-dev-connector.herokuapp.com/api/posts/comment/${postId}/${commentId}`)
+    await axios.delete(`https://urolov-dev-connector-two.herokuapp.com/api/posts/comment/${postId}/${commentId}`)
 
     dispatch({
       type:'REMOVE_COMMENT',
